@@ -6,6 +6,7 @@ const initState = {
 }
 export const Signup = () => {
     const [userData, setUserData] = useState(initState);
+    const [isRegister, setIsRegister] = useState("");
 
     const handleChange = (e) =>{
         const {name,value} = e.target;
@@ -24,6 +25,7 @@ export const Signup = () => {
                 body: JSON.stringify(userData)
             });
             const data = await res.json();
+            setIsRegister(data.msg)
             console.log(data);
         } catch (error) {
             console.error(error);
@@ -34,6 +36,7 @@ export const Signup = () => {
     return (
         <>
             <h3>Registration</h3>
+            <p>{isRegister && isRegister}</p>
             <input type="text" placeholder='Enter username' name="username" value={userData.username} onChange={handleChange}/>
             <input type="text" placeholder='Enter email' name="email" value={userData.email} onChange={handleChange}/>
             <input type="password" placeholder='Enter password' name="pass" value={userData.pass} onChange={handleChange}/>

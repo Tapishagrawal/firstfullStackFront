@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <AllRoutes/>
       <h1>Notes Taking Application</h1>
+      <AllRoutes/>
     </div>
   );
 }

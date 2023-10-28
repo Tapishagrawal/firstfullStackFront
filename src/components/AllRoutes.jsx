@@ -1,5 +1,10 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { Signup } from './Signup'
+import { Login } from './Login'
+import CreateNotes from './CreateNotes'
+import { Notes } from './Notes'
+import { EditNote } from './EditNote'
 
 export const AllRoutes = () => {
     return (
